@@ -3,13 +3,13 @@ const fs = require('fs');
 const bodyParser = require("body-parser");
 const app = express();
 
-let stringifyFile 
+let stringifyFile;
 app.use(bodyParser.json());
 
 app.get('/getNote', function (req, res) {
 	fs.readFile('./test.json', 'utf8', function(err, data) {
 	    if (err) throw err;
-	    stringifyFile = data
+	    stringifyFile = data;
 	    res.send(data);
 	});
 });
